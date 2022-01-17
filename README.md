@@ -1,2 +1,2 @@
 # quiztrivia
-Projeto de uma pagina de quiz usando Javascript e React e a api OpenTrivia
+Projeto de uma pagina de quiz usando Html, CSS, Javascript e a api OpenTrivia
