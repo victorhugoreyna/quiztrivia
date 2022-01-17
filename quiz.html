@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <title>HTML5 page</title>
+  <link rel="stylesheet" href="./style.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+<script type="text/javascript" src="./user.js"></script>
+<script type="text/javascript" src="./quiz.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+	<header>
+		<div id="titulo" class="titulo">
+			<h1>Quiz</h1>
+      <h2>Want to try your knowledge?<h2>
+   </div>
+    <div id="play-button" class="playBox">
+    </div>
+		</div>
+	</header>
+
+<body>
+  <div id="game" class="gameBox">
+      <div id="numberD"><h1>Question:</h1><h1 id="number"></h1></div>
+    <div id="info" class="infoBox">
+      <div id="categoryD"><h2>Category:</h2><h2 id="category"></h2></div>
+      <div id="scoreD"><h2>Score:</h2><h2 id="score">0</h2></div>
+      <div id="difficultyD"><h2>Difficulty:</h2><h2 id="difficulty"></h2></div>
+    </div>
+
+    <div id="quiz" class="quizBox">
+      <h1 id="question">Question text</h1>
+      <script>getGame()</script>
+    </div>
+ </div>
+
+</body>
+</html>

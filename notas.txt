@@ -1,0 +1,23 @@
+data.results[0].name.title
+data.results[i].category or difficulty or question or correct answer or incorrect answers
+
+{ "response_code": 0, "results": [ { "category": "Entertainment: Musicals & Theatres", "type": "multiple", "difficulty": "medium", "question": "Which of these musicals won the Tony Award for Best Musical?", "correct_answer": "Rent", "incorrect_answers": [ "The Color Purple", "American Idiot", "Newsies" ] }, { "category": "Entertainment: Video Games", "type": "multiple", "difficulty": "hard", "question": "What is the name of the main character in the video game VA-11 HALL-A: Cyberpunk Bartender Action?", "correct_answer": "Jill", "incorrect_answers": [ "Dana", "Alma", "Anna" ] } ] }
+
+  $.getJSON('https://opentdb.com/api.php?amount=2', function(temp) {
+     var data = temp;
+     getQuestions(data);
+  });
+
+  window.alert(game.results[ questionN ].question);
+
+colocar em um loop do numero de questoes
+funcao que responde ao clicar uma alternativa, devolve o div ou o id do bloco da alternativa
+funcao que checa se a alternativa eh correta, devolve um 1 ou 0
+funcao que atualiza o score dependendo do 1 ou 0
+if pra testar se o loop deve ir para a proxima questao, mudar um 1 ou 0 dependendo do resultado
+TERMINOU 
+
+NA primeira vez de colocar as alternativas, teste pra ver se sao 2 ou 4, colocar de acordo
+Se a primeira questao for 2 e a segunda 4, criar novas alternativas (duas condicoes cont = 0 e incorrect = 1)
+se a primeira for 4 e a segunda for 2, esconder a 3 e a 4 alternativas.
+Antes de tudo isso no updatequestions, mostrar todas as alternativas.
