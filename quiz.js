@@ -1,7 +1,9 @@
 function getGame() { //funcao de execucao do jogo
+
   var cont = 0; //contador de numero de questoes
   var test; //variavel para testar se a resposta esta correta
   var id; //variavel que armazena a alternativa escolhida
+
   //chamada assincrona da api opentrivia
   (async() => {
    var data = await getData();
