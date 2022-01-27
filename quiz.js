@@ -1,29 +1,23 @@
-
-class Quiz{
-  constructor(api){
-    this.api=api;
-  }
-}
-
-function getGame() {
-  var cont = 0;
-  var test;
-  var id;
+function getGame() { //funcao de execucao do jogo
+  var cont = 0; //contador de numero de questoes
+  var test; //variavel para testar se a resposta esta correta
+  var id; //variavel que armazena a alternativa escolhida
+  //chamada assincrona da api opentrivia
   (async() => {
    var data = await getData();
    updateQuestionN();
    getInfo(data,cont);
    getQuestions(data,cont);
-   $(".button").click(function () {
+   $(".button").click(function () { //evento de clicar uma alternativa
      id = $(this).attr('value');
      if(data.results[cont].correct_answer == id ) test = 0;
      updateScore(test);
      test= 1;
      cont++;
-     if(cont == data.results.length){
+     if(cont == data.results.length){ //se o numero de questoes acabou terminar o jogo
        showResult();
      }
-     else{
+     else{ //continuacao do jogo caso ainda houver questoes
        updateQuestionN();
        getInfo(data,cont);
        updateQuestions(data,cont);
