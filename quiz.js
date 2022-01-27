@@ -28,6 +28,7 @@ function getGame() { //funcao de execucao do jogo
 })()
 }
 
+//funcao assincrona para chamar a api opentriva e devolver uma variavel contendo um json
 async function getData() {
    const response = await fetch('https://opentdb.com/api.php?amount=10')
 
@@ -35,6 +36,8 @@ async function getData() {
 
      return obj;
 }
+
+// funcao que atualiza as informacoes da pergunta
 function getInfo(game,cont){
   document.getElementById("category").innerHTML =game.results[cont].category;
   document.getElementById("question").innerHTML =game.results[cont].question;
@@ -42,15 +45,18 @@ function getInfo(game,cont){
   document.getElementById("difficulty").innerHTML = difficulty;
 }
 
+//funcao para formatar o texto
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
 
 function clearQuestions(){
     for(var i = 1; i<=4; i++)$("#answer"+i).remove();
     $("#question").remove()
 }
 
+//funcao que constroe o quiz na primeira questao
 function getQuestions(game,cont) {
   var arr = [1,2,3,4];
   var i;
@@ -106,6 +112,8 @@ function getQuestions(game,cont) {
 
 }
 
+//funcao que atualiza o quiz a partir da segunda questao
+
 function updateQuestions(game,cont){
   var arr = [1,2,3,4];
   shuffle(arr);
@@ -136,6 +144,8 @@ function updateQuestions(game,cont){
   }
 
 }
+
+//funcao que finaliza o quiz e deixa disponivel apertar um botao para jogar novamente
 function showResult(){
   clearQuestions();
   var $input = $('<input type="button" value="Jogar novamente?" class = button id = exit />');
@@ -145,6 +155,7 @@ function showResult(){
 })
 }
 
+//funcao para sortear aleatoriamente os valores em um vetor, usado para sortear as posicoes das alternativas das questoes
 function shuffle(array) {
   let currentIndex = array.length,  randomIndex;
   while (currentIndex != 0) {
