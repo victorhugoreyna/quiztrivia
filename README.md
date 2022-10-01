@@ -1,2 +1,3 @@
 # Quiztrivia
-Projeto de uma pagina de quiz usando Html, CSS, Javascript e a api OpenTrivia
+ Web page project of a quiz games using Html, CSS, Javascript and the open source api OpenTrivia.
+.
